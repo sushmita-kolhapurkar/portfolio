@@ -131,6 +131,7 @@ div.box {
 }
 .skillbox div img {
 	margin-right:20px;
+	padding-top:5px;
 	width:80px;
 }
 
@@ -261,7 +262,8 @@ a {
 	right:40px;
 	background-color:#c4697c;
 	color:#FFF;
-	border-radius:50px;display: -webkit-flex;
+	border-radius:50px;
+	display: -webkit-flex;
   	display: flex;
   	align-items: center;
 	text-align:center;
@@ -275,12 +277,14 @@ a {
 	width:40px;
 	bottom:130px;
 	right:50px;
+	z-index:10;
 	}
 .downbtndown img{
 	position:fixed;
 	width:40px;
 	bottom:45px;
 	right:50px;
+	z-index:10;
 	}
 	
 ul {
