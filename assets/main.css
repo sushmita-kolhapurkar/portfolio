@@ -4,6 +4,7 @@ html,body {
   position: relative;
   font-size:14px;
   scroll-behavior: smooth;
+  color:#333;
 }
 svg {
   max-width: 100%;
@@ -15,6 +16,11 @@ svg {
 .subtitle-font {
 	font-size:1.3em;
 	color: #495843;
+}
+.sideheading-font {
+	font-size:1.2em;
+	color: #c4697c;
+	line-height:36px;
 }
 .grey-font {
 	color: #666;
@@ -78,6 +84,29 @@ svg {
 	width:300px;
   }
   
+div.box {
+  position: relative;
+  margin:0px;
+  padding-left:100px;
+  padding-top:10px;
+  background-color:#FFFFFF;
+  z-index:160;
+	font-size:0.9em;
+}
+  
+.box .left{
+	width:56%;
+	display:inline-block;
+}
+.box .right{
+	width:28%; 
+	display:inline-block; 
+	vertical-align:top;
+	padding:10px 0 10px 20px;
+	color:#556F57;
+	line-height:1.6em;
+	border:1px dashed #556F57; 
+}
 .calltoaction {
 	width:50%;
 	text-align:center;
@@ -85,12 +114,25 @@ svg {
 }
 .calltoaction a{
 	display:inline;
+	padding:5px;
 	background-color: #556F57;
 	color: #FFFFFF;
 	border-radius: 10px;
 	text-size:0.7em;
 }
 
+.skillbox {
+	margin-bottom:10px;
+}
+.skillbox div{
+	display:inline-block;
+	vertical-align:top;
+	color:#333;
+}
+.skillbox div img {
+	margin-right:20px;
+	width:80px;
+}
 
 .typing {
   /*This part is important for centering*/
@@ -240,3 +282,15 @@ a {
 	bottom:45px;
 	right:50px;
 	}
+	
+ul {
+	padding:0;
+}
+ul li{
+	list-style:circle;
+	list-style-position:inside;
+	line-height:1.4em;
+}
+ul li:not(:last-child) {
+	margin-bottom:10px;
+}
