@@ -87,8 +87,7 @@ svg {
 div.box {
   position: relative;
   margin:0px;
-  padding-left:100px;
-  padding-top:10px;
+  padding:10px 0 10px 100px;
   background-color:#FFFFFF;
   z-index:160;
 	font-size:0.9em;
@@ -174,21 +173,21 @@ div.box {
   }
 }
 
-.landscape2 {
+.journey2 {
   background: var(--c1);
   height: 1000px;
   overflow: visible;
   position: relative;
   z-index:0;
 }
-.landscape {
+.journey {
   background: var(--c1);
   height: 1000px;
   overflow: visible;
   position: relative;
   z-index:30;
 }
-.landscape__layer {
+.journey__layer {
   height: 100%;
   left: 0;
   position: absolute;
@@ -197,14 +196,14 @@ div.box {
   transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
 }
  svg{
-	z-index:100;
+	/* z-index:100; */
 }
 @media (prefers-reduced-motion: reduce) {
-  .landscape__layer {
+  .journey__layer {
     transform: translateY(0);
   }
 }
-.landscape__image {
+.journey__image {
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -216,7 +215,7 @@ div.box {
   transform: translateX(-50%);
   width: 100hh;
 }
-.landscape__image svg {
+.journey__image svg {
   display: block;
   height: auto;
   max-width: 100%;
