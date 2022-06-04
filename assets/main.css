@@ -4,18 +4,24 @@ html,body {
   position: relative;
   font-size:14px;
   scroll-behavior: smooth;
-  color:#333;
+  color:#666666;
+  line-height:2em;
 }
 svg {
   max-width: 100%;
 }
 .main-font {
-	font-size:2.8em;
-	color: #c4697c;
+	font-size:2.2em;
+	color: #556F57;
+	line-height:0.8em;
+	padding-bottom:0px;
+	margin-bottom:0px;
 }
 .subtitle-font {
-	font-size:1.3em;
-	color: #495843;
+	font-size:1.2em;
+	color: #4A4A4A;
+	padding-top:0px;
+	margin-top:0px;
 }
 .sideheading-font {
 	font-size:1.2em;
@@ -23,14 +29,14 @@ svg {
 	line-height:36px;
 }
 .grey-font {
-	color: #666;
+	color: #666666;
 }
 .lightgrey-font {
 	color: #999;
 }
 
 .wrapper {
-	font-family: monospace;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 1.6em;
 	color: #333;
 }
@@ -38,26 +44,26 @@ svg {
   height: 100vh;
   width: 100%;
   position: relative;
-  background: #FFF url(img/bg.jpg) top left no-repeat;
+  background: #FFF url(img/bg2.jpg) top left no-repeat;
   margin: 0;
   padding: 0;
   z-index:50;
 }
   .homebox #intro {
-  width: calc(100% - 200px);
+  width: calc(100% - 300px);
   height: calc(100% - 200px);
 	display:inline-block;
   	position: relative;
-	margin:100px;
+	margin:100px auto 100px 0;
 	text-align: left;
-  	font-family: monospace;
+  	font-family: Tahoma, Geneva, sans-serif;
 	background-color:rgba(256, 256, 256, 0.6);
   }
   .homebox .left {
   width: 60%;
 	left: 0; top: 0; bottom: 0;
   	position: absolute;
-	margin:50px 0 50px 50px;
+	margin:50px 0 50px 100px;
 	padding:0;
   }
   .homebox .left .ease { 
@@ -110,6 +116,7 @@ div.box {
 	width:50%;
 	text-align:center;
 	margin:65px auto 0 auto;
+	color: #556F57;
 }
 .calltoaction a{
 	display:inline;
@@ -119,9 +126,13 @@ div.box {
 	border-radius: 10px;
 	text-size:0.7em;
 }
+.calltoaction img{
+	display:inline;
+	width:inherit;
+}
 
 .skillbox {
-	margin-bottom:10px;
+	margin:10px 0 10px 0;
 }
 .skillbox div{
 	display:inline-block;
@@ -153,11 +164,12 @@ div.box {
 
 .titlebar {
 	position: relative;
-	background-color:#556F57;
-	height:60px;
-	padding:10px 0 0 100px;
+	background-color:#535a54;
+	height:50px;
+	padding:20px 0 0 100px;
 	color:#dfebe0;
-	font-size:1.8em;
+	font-variant:small-caps;
+	font-size:1.3em;
 	z-index:150;
 }
 
@@ -186,6 +198,7 @@ div.box {
   overflow: visible;
   position: relative;
   z-index:30;
+  background: #FFF url(img/journeybg.jpg) top left no-repeat;
 }
 .journey__layer {
   height: 100%;
@@ -194,6 +207,8 @@ div.box {
   top: 0;
   width: 100%;
   transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+  font-size:0.9em;
+  color:#333333;
 }
  svg{
 	/* z-index:100; */
@@ -296,4 +311,13 @@ ul li{
 }
 ul li:not(:last-child) {
 	margin-bottom:10px;
+}
+.rightnav {
+	display:inline-block;
+  	height: 100vh;
+	background-color:#c4697c;
+	margin:0 auto;
+	right:30px;
+	width:10px;
+	z-index:3000;
 }
