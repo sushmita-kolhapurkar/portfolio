@@ -1,0 +1,59 @@
+
+.journey2 {
+  background: var(--c1);
+  height: 1100px;
+  overflow: visible;
+  position: relative;
+  z-index:50;
+}
+.journey {
+  background: #666;
+  height: 1100px;
+  overflow: hidden;
+  position: relative;
+  z-index:30;
+  background: #EFEFEF url(assets/img/journeybg.jpg) top left no-repeat;
+}
+.journey__layer {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+  font-size:0.9em;
+  color:#333333;
+}
+ svg{
+	 z-index:100; 
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey__layer {
+    transform: translateY(0);
+  }
+}
+.journey__image {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-height: 100%;
+  max-width: 300%;
+  min-width: 100%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100hh;
+}
+.journey__image svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.overlay {
+	height:100%;
+	min-height:500px;
+	z-index:170;
+	margin-top:-800px;
+}
+	
