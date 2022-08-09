@@ -13,10 +13,12 @@ function animation() {
 
     // reset the seen scroll position
     scrollPos = scrollEl.scrollTop
+	if (scrollPos <=500) {
     // update css property --scrollPos with scroll position in pixels
     root.style.setProperty('--scrollPos', scrollPos + 'px')
     root.style.setProperty('--rollPos', rollPos + 'deg')
     root.style.setProperty('--radPos', scrollPos/100 + 'rad')
+	}
 	
   }
 
