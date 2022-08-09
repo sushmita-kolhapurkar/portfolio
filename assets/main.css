@@ -60,7 +60,7 @@ svg {
   max-width: 100%;
 }
 .wrapper {
-  	background: #fcfcfb url(assets/img/bg3.jpg) top left no-repeat;
+  	background: #fcfcfb url(img/bg3.jpg) top left no-repeat;
   background-size: 90% auto;
 }
 .homebox {
@@ -585,7 +585,7 @@ g[id^=papercut]>path{
 	padding: 2% 5%;
 }
 #bgdiv>.sectionbox:nth-child(1) {
-	 background-image:url(assets/img/flowerbg.gif);
+	 background-image:url(img/flowerbg.gif);
 }
 #bgdiv .sectionbox .box {
 	height:100%;
@@ -695,3 +695,4 @@ g[id^=papercut]>path{
 @keyframes visible {
   100% { stroke-dashoffset: 0; }
 }
+  
