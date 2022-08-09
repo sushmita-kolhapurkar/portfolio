@@ -1,0 +1,59 @@
+.mainbox {
+	height:100vh;
+	position:relative;
+}
+.journey2 {
+  background: var(--c1);
+  height: 100vh;
+  overflow: visible;
+  position: relative;
+  z-index:50;
+}
+.journey {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index:30;
+  
+}
+.journey__layer {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+  font-size:0.9em;
+}
+ svg{
+	 z-index:100; 
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey__layer {
+    transform: translateY(0);
+  }
+}
+.journey__image {
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-height: 100%;
+  max-width: 300%;
+  min-width: 100%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100hh;
+}
+.journey__image svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.overlay {
+	height:100%;
+	min-height:500px;
+	z-index:170;
+	margin-top:-800px;
+}
+	

@@ -8,9 +8,444 @@
 <meta name="author" content="">
 <base href="">
 <title>Sushmita Kolhapurkar</title>
-<link rel="stylesheet" href="assets/main.css">
-<script type="text/javascript" src="assets/parallax.js"></script>
+<link rel="stylesheet" href="main2.css">
+<link rel="stylesheet" href="main3.css">
 </head>
+<body class="body-font">
+<style>
+body {
+  margin: 0;
+  /*background-image: url('https://img.wallpapersafari.com/desktop/1024/576/23/97/1JynjM.jpg');*/
+}
+
+main {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+div.mainbox p{
+	font-size:1.2em;
+	color:#FFFFFF;
+}
+svg {
+	margin:0;
+	padding:0;
+	min-height:0px;
+}
+svg[class^=flower]{
+	filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 0.4));
+}
+path[id^=leaf]{
+	filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 0.3));
+}
+.floweranim{
+    transform-origin: 0 0;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+   /* animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); */
+   animation-timing-function: linear;
+}
+  .flower1{
+    animation-name: flower1;
+    }
+@keyframes flower1 {
+  30%{
+    transform: rotate(-1.2deg);
+  }
+}
+  .flower2{
+    animation-name: flower2;
+    }
+@keyframes flower2 {
+  100%{
+    transform: rotate(1deg);
+  }
+}
+  .flower3{
+    animation-name: flower3;
+    }
+@keyframes flower3 {
+  20%{
+    transform: rotate(0.8deg);
+  }
+}
+
+	#flower1_1 {
+		   fill: url(#RadialGradient2);
+	}
+       #flower1_1:hover {
+         stroke: black;
+         fill: red;
+       }
+	 #flower2_2 {
+		   fill: url(#orangeCenterRadial);
+	 }
+	 #flower5_1 {
+		  fill: url(#redRadial);
+	 }
+	 #flower2_1 {
+		  fill: url(#yellowRadial);
+	 }
+	 [id^=leaf] {
+		  fill: url(#greenRadial);
+	 }
+	 #flower4_1 {
+		  fill: url(#blueRadial);
+	 }
+	 #flower4_2 {
+		  fill: url(#blueyellRadial);
+	 }
+	 #rose {
+		  fill: url(#pinkRadial);
+	 }
+	 
+.rollingdiv {
+  top: 2%;
+  display: flex;
+  flex-direction: column;
+  left: 5%;
+  max-width: 300%;
+  max-height:300px;
+  position: absolute;
+  width: 100hh;
+  z-index:60;
+  animation:drop 20s forwards 1 linear;
+   }
+.rollflower {
+	height:150px; width:150px;
+	z-index:100;
+}
+.rollfloweranim {
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+	animation-name:roll;
+	animation-duration:8s;
+	animation-iteration-count:infinite;
+	animation-direction:forwards;
+}
+@keyframes roll {
+  50% {
+    transform: rotate(180deg)
+  } 
+  70% {
+	  transform: rotateX(3.164rad)
+  }
+}
+@keyframes drop {
+	0%{
+  	transform: translateY(calc(var(--scrollPos, 0)*var(--offset, 0)*20));
+	}
+	70%{
+  	transform: translateY(calc(var(--scrollPos, 0)*var(--offset, 0)*10));
+	}
+
+}
+.card-group {
+	width: 100%;
+	display:flex;
+  justify-content: space-between;
+  bottom:2%;
+}
+.card {
+  width: 18%;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  display:inline-block;
+  font-family: Arial, Verdana, sans-serif;
+}
+.card .additional {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  padding:1rem;
+  overflow: hidden;
+  background: linear-gradient(#90b82c, #e7c62a);
+  border-bottom:4px solid #dcb70a;
+  z-index: 2;
+}
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);
+}
+.card:hover .additional {
+  height: 80px;
+  background: linear-gradient(#90b82c, #e7c62a);
+  transition: height 0.4s;
+}
+.card .additional .user-card {
+  height: 150px;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.card .general {
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+.card.green .general {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+.card h1 {
+  text-align: center;
+  font-size:1.5em;
+  color:#FFF;
+  margin-top:80%;
+}
+.card:hover h1 {
+  font-size:1.2em;
+  margin-top:6%;
+  transition:ease-out 0.4s;
+}
+.card p {
+  font-size:1em;
+  line-height:1.5em;
+}
+.card hr {
+	border:1px solid #CCC;
+	border-radius:2px;
+	margin:2px;
+}
+.card .imgbg {
+	border-radius: 50%;
+    width: 100px;
+    height: 100px; 
+	padding:5px;
+	background-color:#FFFFFF;
+	text-align:center;
+}
+.card img{
+	width:80%;
+}
+.card:hover .imgbg{
+	display:none;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+g[id^=papercut]>path{
+	filter: drop-shadow(0 0 0.7rem rgb(0 0 0/0.4));
+}
+#flowerspray path{
+	transform-origin:28% 43%;
+	animation:rotation-path 10s forwards infinite ease;
+}
+#flowerspray:nth-child(1)>use{
+	transform-origin:18% 35%;
+	animation:rotation-1 10s forwards infinite ease;
+}
+#flowerspray>use:nth-child(2) {
+	transform-origin:18% 35%;
+	animation:rotation-2 10s forwards infinite ease;
+}
+#flowerspray>use:nth-child(3){
+	animation:rotation-3 10s forwards infinite ease;
+}
+#flowerspray>use:nth-child(4){
+	animation:rotation-4 10s forwards infinite ease;
+}
+@keyframes rotation-path {
+  from { transform: scale(0.2) rotate(-20deg); }
+  to { transform: scale(1) rotate(25deg); }
+}
+@keyframes rotation-1 {
+  from { transform: scale(0) rotate(30deg); }
+  to { transform: scale(0.2) rotate(-15deg); }
+}
+@keyframes rotation-2 {
+  from { transform: scale(0.2) rotate(0deg); }
+  to { transform: scale(0.8) rotate(35deg); }
+}
+@keyframes rotation-3 {
+  from { transform: scale(0.2) rotate(-30deg); }
+  to { transform: scale(0.6) rotate(5deg); }
+}
+@keyframes rotation-4 {
+  from { transform: scale(0.1) rotate(25deg); }
+  to { transform: scale(0.4) rotate(-20deg); }
+}
+/*#fa {
+	transform:translate(100, 100);
+  animation-delay: -10s;
+  animation-duration: 4s;
+}
+/*
+@keyframes slidein {
+  from {
+	  transform: rotateY(0deg) translateX(0px) translateX(150px);
+  }
+
+  to {
+	  transform: rotateY(180deg) translateX(150px) translateY(200px);
+   
+  }
+}
+
+@keyframes wave {
+  0% {
+   transform: translate3d(90px,0,0);
+  }
+  100% { 
+    transform: translate3d(-85px,0,0);
+  }
+}
+
+.flowerwave {
+  animation: pulse 1s infinite ease-in-out alternate;
+}*/
+#bgdiv {
+	margin-top:0px;
+	  --offset:-2;
+}
+#bgdiv>.journey__layer:nth-child(2)>.journey__image {
+	padding: 2% 5%;
+}
+#bgdiv>.journey__layer:nth-child(1) {
+	 background-image:url(assets/img/flowerbg.gif);
+}
+#bgdiv .journey__layer .box {
+	height:100%;
+	width:100%;
+	padding:2%;
+	padding-left:5%;
+	margin:0;
+	left:-5%;
+	background-image: linear-gradient(to right, white 80%, transparent);
+}
+#bgdiv .box p{
+	line-height:1.2em;
+}
+.projectbox {
+	width:105%;
+	max-height:6em;
+	margin-left:-3%;
+	margin-bottom:2%;
+ 	 padding:1% 1%;
+	border:1px solid #FFFFFF; 
+	border-radius:6px;
+	display:inline;
+	overflow:hidden;
+	transition: ease-out 2s;
+	background: center center no-repeat;
+}
+.projectbox:hover {	
+	max-height:13em;
+}
+.projectbox p {
+	margin:1% 0; }	
+.projectbox .subheading-font {
+	color:#c63462; }
+.projectbox .border {
+  height: 100%;
+	max-height:11em;
+  width: 100%;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  padding:0.5% 2%;
+  position: relative;
+  overflow:hidden;
+}
+.projectbox .content {
+  width:100%;
+  display:inline-block; 
+  position:relative;
+  vertical-align:top;
+}
+.projectbox:hover .content{
+  width:70%;
+  right:0;
+  animation:slider-left 0.5s forwards 1 ease-in;
+  animation-delay:-0.1s;
+}
+.projectbox .border:hover {
+    border: 1px solid #CCC;
+}
+.projectbox .tools, .projectbox .graphics{
+	display:none;
+  vertical-align:top; 
+}
+.projectbox .graphics{
+  margin-top:-0.5%;
+  margin-bottom:-0.5%;
+  margin-left: -2.5%;
+  margin-right:2%;
+}
+.projectbox:hover .tools, .projectbox:hover .graphics{
+	width:10%;
+	position:relative;
+	display:inline-block;
+	animation:slider-left 0.5s forwards 1 ease;
+}
+.projectbox:hover .graphics {
+	animation-delay:-0.1s;
+}
+@keyframes slider-left {
+	0% { left:-10%; transform: translateX(0%); }
+	100% { left:0; transform: translateX(5%);}
+}
+@keyframes slider-right {
+	0% { left:-10%; transform: translateX(0%); }
+	100% { left:0; transform: translateX(2%);}
+}
+.contacticon {
+	stroke-dasharray: 1000;
+  stroke-dashoffset: 10;
+  animation: rotation 15s ease-in-out alternate infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#flowerrose {
+	animation: rotation 15s ease-in-out alternate infinite;
+}
+  </style>
+<div class="rollingdiv" style="--offset:0.2;z-index:60"> <svg class="rollflower" xmlns="http://www.w3.org/2000/svg" viewBox="0 200 400 400">
+  <path id="orange_overlay"
+        fill="orange"  transform="scale(1)"
+        d="M 109.00,351.00
+           C 102.06,351.14 10.38,300.94 95.00,244.00 99.00,243.00 120.00,237.00 120.00,237.00 120.00,237.00 138.00,224.00 162.00,231.00 162.00,230.00 210.00,187.00 219.00,293.00 222.00,292.00 226.00,207.00 289.00,256.00 294.00,256.00 302.00,272.00 314.00,266.00 316.00,268.00 359.00,283.00 340.00,298.00 341.00,304.00 371.00,332.00 319.00,360.00 319.00,363.00 379.00,348.00 373.00,390.00 380.00,393.00 372.00,402.00 376.00,408.00 377.00,410.00 366.00,417.00 378.00,431.00 382.00,434.00 362.00,498.00 319.00,504.00 315.00,507.00 298.00,502.00 268.00,467.00 270.00,465.00 320.00,537.00 265.00,560.00 210.00,583.00 189.00,572.00 189.00,572.00 189.00,572.00 100.00,559.00 127.00,500.00 154.00,441.00 152.00,450.00 152.00,450.00 152.00,450.00 93.00,534.00 52.00,502.00 54.00,506.00 24.00,494.00 27.00,483.00 29.00,480.00 14.00,456.00 14.00,434.00 14.00,434.00 4.00,431.00 10.00,370.00 8.00,366.00 19.00,333.00 60.00,337.00 61.00,337.00 83.25,343.50 89.50,345.25" />
+  <path id="orange2_overlay"
+        fill="red" transform="scale(1)"
+        d="M 146.00,388.25
+           C 152.50,394.75 142.50,429.75 172.50,424.00 172.75,424.25 182.75,440.50 199.25,428.00 199.00,428.25 214.50,444.00 226.00,426.00 226.00,426.75 249.75,420.25 245.00,400.75 245.25,401.75 257.75,377.00 245.50,369.25 244.75,369.25 235.50,372.25 235.50,372.25 235.50,372.25 238.75,361.50 238.25,361.25 237.75,361.00 234.75,349.25 227.00,365.50 226.75,367.25 220.25,377.50 220.25,377.50 220.25,377.50 221.25,365.50 225.75,356.75 226.00,356.25 229.75,340.75 221.00,353.75 221.00,353.50 212.00,374.00 212.00,374.00 212.00,374.00 208.75,353.50 208.75,349.00 208.75,344.50 202.50,341.00 201.00,347.25 199.50,353.50 201.25,370.50 201.25,370.50 201.25,370.50 200.00,376.75 200.00,376.75 200.00,376.75 199.00,356.00 199.00,356.00 199.00,356.00 197.25,348.75 197.25,348.75 197.25,348.75 191.75,342.50 184.75,348.00 177.75,353.50 176.50,351.00 176.50,351.00 176.50,351.00 161.00,355.25 163.75,362.75 164.00,363.00 144.50,363.50 146.00,388.25 Z" />
+  </svg> </div>
+<div class="journey2" role="img" aria-label=" ">
+  <div class="homebox">
+    <div class="top-bar"> </div>
+    <div id="logo-title">Sushmita Kolhapurkar</div>
+    <!--<nav class="navMenu"><a href="#sk">Skills</a> <a href="#jr">My Journey</a> <a href="#ex">Experience</a> <a href="#ed">Education</a>
+      <div class="dot"></div>
+    </nav>-->
+    <div class="right">
+      <div class="typing lightgrey-font">
+        <div class="typing-box">Hello World!!</div>
+=======
 <body>
 <div class="wrapper body-font">
   <div class="homebox">
@@ -74,7 +509,13 @@
         <div><img src="assets/img/onlineicon.gif"> </div>
         <div> <span class="subheading-font"> Online Marketing</span><br>
           SEO, SEM, Google Analytics, Google AdWords </div>
+
       </div>
+      <div class="ease">
+        <p>I am a Full Stack Generalist Developer with 8+ years of professional experience in designing, developing and testing numerous applications and websites using a range of technologies and programming languages.</p>
+        <br>
+        <span class="tag">Front-end designer</span><span class="tag">Back-end developer</span><span class="tag">Print material designer</span><span class="tag">Adobe Creative Suite</span><span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span><br>
+        <span class="tag">Animal lover</span><span class="tag">Nature enthusiast</span><span class="tag">Watercolourist</span><span class="tag">DIY-er</span> </div>
     </div>
     <div class="right neg-break"> <span class="subtitle-font">Certifications</span><br>
       <ul class="green-font">
@@ -91,6 +532,369 @@
       </ul>
     </div>
   </div>
+  <div class="journey__layer" style="--offset:-0.80; margin-top:0px">
+    <div class="journey__image"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 100 800 400" style="z-index:-50;";>
+      <defs>
+        <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="red"/>
+          <stop offset="50%" stop-color="black" stop-opacity="0"/>
+          <stop offset="100%" stop-color="blue"/>
+        </linearGradient>
+        <radialGradient id="RadialGradient2" cx="0.5" cy="0.5" r="0.3">
+          <stop offset="0%" stop-color="#b00310"/>
+          <stop offset="30%" stop-color="red"/>
+          <stop offset="100%" stop-color="#c63462"/>
+        </radialGradient>
+        <radialGradient id="redRadial" cx="0.5" cy="0.45" r="0.5">
+          <stop offset="0%" stop-color="#593131"/>
+          <stop offset="40%" stop-color="#c7250f"/>
+          <stop offset="80%" stop-color="#d31b1b"/>
+          <stop offset="100%" stop-color="#ab2020"/>
+        </radialGradient>
+        <radialGradient id="yellowRadial" cx="0.5" cy="0.55" r="0.3">
+          <stop offset="0%" stop-color="#e0aa0a"/>
+          <stop offset="100%" stop-color="#eddb42"/>
+        </radialGradient>
+        <radialGradient id="orangeCenterRadial" cx="0.1" cy="0.2" r="0.4">
+          <stop offset="0%" stop-color="#8b2b05"/>
+          <stop offset="100%" stop-color="orange"/>
+        </radialGradient>
+        <radialGradient id="greenRadial" cx="0.5" cy="0.5" r="0.5" fx="0.26" fy="0.9" spreadMethod="pad">
+          <stop offset="0%" stop-color="#4e7c16"/>
+          <stop offset="100%" stop-color="#deea84"/>
+        </radialGradient>
+        <radialGradient id="blueRadial" cx="0.5" cy="0.45" r="0.4">
+          <stop offset="0%" stop-color="#7889cf"/>
+          <stop offset="50%" stop-color="#4d37c0"/>
+          <stop offset="100%" stop-color="#5439ac"/>
+        </radialGradient>
+        <radialGradient id="blueyellRadial" cx="0.5" cy="0.5" r="0.6">
+          <stop offset="0%" stop-color="#fedc1f"/>
+          <stop offset="70%" stop-color="#e4d045"/>
+          <stop offset="100%" stop-color="#b7bedc"/>
+        </radialGradient>
+        <radialGradient id="pinkRadial" cx="0.5" cy="0.5" r="0.7">
+          <stop offset="0%" stop-color="#cf3d56"/>
+          <stop offset="50%" stop-color="#ffc0cb"/>
+          <stop offset="100%" stop-color="#f294a4"/>
+        </radialGradient>
+        <style type="text/css">
+<![CDATA[
+    ]]>
+</style>
+      </defs>
+      <g fill="grey">
+        <path id="leaf" fill="green" transform="translate(-120 170) scale(0.8)"
+        d="M 784.50,244.00
+           C 784.50,244.00 769.00,240.00 762.00,222.50 760.00,219.00 765.00,219.50 765.00,219.50 765.00,219.50 755.50,211.50 760.50,196.00 758.00,194.50 765.00,198.50 765.00,198.50 765.00,198.50 763.00,175.50 770.75,172.00 771.25,172.50 773.75,173.00 773.75,173.00 773.75,173.00 780.00,153.00 790.00,149.75 791.00,150.25 792.25,153.25 792.25,153.25 792.25,153.25 798.00,139.00 810.50,129.75 811.25,129.50 812.50,131.25 812.50,131.25 812.50,131.25 824.50,117.00 829.00,115.75 829.50,116.00 830.75,120.25 830.75,120.25 830.75,120.25 842.75,104.25 842.75,103.50 842.75,102.75 851.25,111.50 853.50,133.00 853.50,133.50 856.50,127.75 856.50,127.75 856.50,127.75 862.25,140.50 863.00,148.00 863.75,148.00 865.75,144.25 865.75,143.25 865.75,142.25 871.25,150.75 869.00,166.50 870.25,167.25 874.00,164.50 874.00,163.25 874.00,162.00 875.75,191.00 870.50,203.25 870.00,204.50 873.75,201.75 873.75,201.75 873.75,201.75 868.25,222.00 865.25,226.50 866.25,226.50 870.75,223.50 870.75,223.50 870.75,223.50 859.00,243.75 855.00,249.00 854.25,250.75 860.75,250.25 860.75,250.25 860.75,250.25 842.50,268.75 814.50,263.75 814.75,263.75 779.25,250.50 783.25,247.25 783.50,247.00 787.25,246.75 787.00,246.50" />
+      </g>
+      <use href="#leaf" transform="translate(720 -100) rotate(70) scale(1.1) skewX(-20)" />
+      <g fill="grey" transform="translate(450 -100) rotate(70)">
+        <path id="leaf2"
+        fill="green" transform="translate(100 0) scale(0.6)"
+        d="M 334.75,357.25
+           C 334.75,357.25 334.00,355.00 334.00,355.00 334.00,355.00 342.00,227.00 574.00,285.00 572.75,284.75 527.25,327.50 516.25,349.00 516.50,348.50 403.75,433.00 336.00,358.75" />
+      </g>
+      <use href="#leaf2" transform="translate(700 330) rotate(170) scale(0.7)" />
+      <use href="#leaf2" transform="translate(500 520) rotate(170) scale(0.7)" />
+      <use href="#leaf2" transform="translate(520 400) rotate(180) scale(0.7)" />
+      <use href="#leaf2" transform="translate(430 460) rotate(-120) scale(0.7)" />
+      <path id="leaf3" fill="green" transform="translate(80 -130)"
+        d="M 151.06,310.02
+           C 151.06,310.02 142.05,323.25 106.39,304.90 106.40,305.78 113.82,304.81 113.82,304.81 113.82,304.81 91.23,282.79 98.67,283.13 98.68,283.57 74.34,261.58 73.92,262.46 69.62,268.63 85.54,248.31 120.22,257.93 122.85,258.33 119.71,252.25 119.71,252.25 119.71,252.25 159.59,258.73 156.67,303.82 158.43,304.24 130.39,266.98 117.35,272.83 118.22,272.82 157.95,301.18 156.77,311.26" />
+      </svg> </div>
+  </div>
+  <!-- yellow flower -->
+  <div class="journey__layer" style="--offset:-0.50; margin-top:0px">
+    <div class="journey__image"> <svg class="floweranim flower1" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 1000 500">
+      <path id="flower2_2" fill="#ea6834" transform="scale(0.4)"
+        d="M 880.74,230.74
+           C 880.74,230.74 886.30,229.85 892.98,224.46 899.65,219.07 906.67,220.23 909.26,228.60 911.84,236.97 929.62,218.98 927.42,238.84 928.41,239.36 944.04,238.70 937.15,254.17 937.56,258.21 959.99,257.95 949.53,286.19 948.48,288.18 966.05,301.92 954.47,313.00 952.66,315.22 962.33,333.07 952.09,340.40 956.37,340.75 956.51,368.21 947.38,371.03 945.38,369.98 957.30,400.47 934.98,395.69 937.74,396.51 941.45,422.03 922.06,421.35 920.54,421.82 918.92,438.15 900.70,430.44 899.41,431.67 907.15,445.95 885.60,440.93 882.21,446.15 864.37,466.65 860.14,452.96 857.10,453.90 841.89,469.43 829.46,450.76 828.64,453.51 808.44,455.58 812.77,442.57 812.18,446.09 787.30,443.77 793.67,429.30 792.38,430.53 781.51,387.21 767.29,392.43 753.06,397.66 765.61,343.78 762.79,334.65 759.97,325.52 711.52,295.46 705.08,290.78 698.63,286.10 734.31,234.25 734.31,234.25 734.31,234.25 846.67,233.75 858.03,232.75 869.38,231.74 874.83,235.89 874.83,235.89" />
+      <path id="flower2_1" transform="scale(0.4)"
+        d="M 806.13,148.08
+           C 806.13,148.08 901.65,101.10 921.32,100.03 941.00,98.96 893.67,221.08 875.58,219.16 863.42,207.67 818.05,250.93 774.53,232.01 731.12,212.90 728.60,269.52 710.33,275.16 691.98,280.82 779.30,320.38 761.17,366.98 760.09,367.32 760.72,369.10 762.31,371.62 767.43,379.71 782.45,395.42 782.45,395.42 782.45,395.42 788.62,423.52 788.62,423.52 788.62,423.52 738.99,513.85 730.90,503.84 722.81,493.84 675.72,470.87 702.52,387.58 698.66,391.27 655.31,437.16 568.36,438.99 563.63,447.95 550.89,341.86 667.83,283.27 666.25,286.26 587.53,258.05 561.78,125.97 561.78,125.97 624.12,109.24 716.56,165.72 717.27,168.00 689.26,69.13 741.54,-4.51 745.23,-0.65 822.06,78.15 804.89,135.96" />
+      </svg> </div>
+  </div>
+  <!-- maroon flower -->
+  <div class="journey__layer" style="--offset:-1; margin-top:0px">
+    <div class="journey__image"> <svg class="floweranim" xmlns="http://www.w3.org/2000/svg" viewBox="-60 0 1000 500">
+      <path id="flower1_1" fill="#c63462" transform="scale(0.25)"
+        d="M 297.00,500.50
+           C 297.00,500.50 181.50,125.50 387.00,133.00 592.50,140.50 507.00,430.00 499.50,460.00 492.00,490.00 646.50,332.50 729.00,416.50 811.50,500.50 789.00,569.50 787.50,602.50 786.00,635.50 543.00,719.50 463.50,674.50 384.00,629.50 724.50,800.50 715.50,881.50 706.50,962.50 703.50,965.50 672.00,989.50 640.50,1013.50 438.00,899.50 442.50,839.50 441.00,845.50 132.00,946.00 241.50,715.00 238.50,706.00 7.50,418.00 288.00,500.50 288.00,499.00 289.50,500.50 289.50,500.50" />
+      <path id="flower1_2" fill="orange" transform="scale(0.25)"
+        d="M 357.00,589.50
+           C 357.00,589.50 405.00,606.00 387.00,553.50 369.00,501.00 345.00,522.00 367.50,517.50 390.00,513.00 408.00,558.00 408.00,558.00 408.00,558.00 406.50,574.50 406.50,574.50 406.50,574.50 435.00,528.00 435.00,528.00 435.00,528.00 433.50,483.00 433.50,483.00 433.50,483.00 460.50,496.50 453.00,523.50 445.50,550.50 427.50,567.00 427.50,567.00 427.50,567.00 486.00,537.00 486.00,537.00 486.00,537.00 453.00,522.00 472.50,511.50 492.00,501.00 507.00,529.50 507.00,529.50 507.00,529.50 514.50,519.00 546.00,504.00 552.00,504.00 520.50,522.00 514.50,549.00 511.50,552.00 552.00,573.00 525.00,573.00 535.50,579.00 501.00,565.50 502.50,564.00 504.00,562.50 478.50,603.00 478.50,603.00 478.50,603.00 526.50,579.00 564.00,603.00 562.50,604.50 580.50,612.00 561.00,609.00 562.50,612.00 544.50,612.00 544.50,612.00 544.50,612.00 553.50,586.50 471.00,618.00 483.00,618.00 519.00,640.50 508.50,648.00 498.00,655.50 472.50,622.50 457.50,631.50 442.50,640.50 441.00,619.50 415.50,636.00 390.00,652.50 367.50,600.00 367.50,600.00" />
+      </svg> </div>
+  </div>
+  <!-- pink flower -->
+  <div class="journey__layer" style="--offset:-1.6; margin-top:0px">
+    <div class="journey__image"> <svg class="flower2" xmlns="http://www.w3.org/2000/svg" viewBox="-60 -190 1000 500">
+      <path id="rose"
+        fill="pink"  transform="scale(0.5)"
+        d="M 109.00,351.00
+           C 102.06,351.14 10.38,300.94 95.00,244.00 99.00,243.00 120.00,237.00 120.00,237.00 120.00,237.00 138.00,224.00 162.00,231.00 162.00,230.00 210.00,187.00 219.00,293.00 222.00,292.00 226.00,207.00 289.00,256.00 294.00,256.00 302.00,272.00 314.00,266.00 316.00,268.00 359.00,283.00 340.00,298.00 341.00,304.00 371.00,332.00 319.00,360.00 319.00,363.00 379.00,348.00 373.00,390.00 380.00,393.00 372.00,402.00 376.00,408.00 377.00,410.00 366.00,417.00 378.00,431.00 382.00,434.00 362.00,498.00 319.00,504.00 315.00,507.00 298.00,502.00 268.00,467.00 270.00,465.00 320.00,537.00 265.00,560.00 210.00,583.00 189.00,572.00 189.00,572.00 189.00,572.00 100.00,559.00 127.00,500.00 154.00,441.00 152.00,450.00 152.00,450.00 152.00,450.00 93.00,534.00 52.00,502.00 54.00,506.00 24.00,494.00 27.00,483.00 29.00,480.00 14.00,456.00 14.00,434.00 14.00,434.00 4.00,431.00 10.00,370.00 8.00,366.00 19.00,333.00 60.00,337.00 61.00,337.00 83.25,343.50 89.50,345.25" />
+      <path id="rose2"
+        fill="orange" transform="scale(0.5)"
+        d="M 146.00,388.25
+           C 152.50,394.75 142.50,429.75 172.50,424.00 172.75,424.25 182.75,440.50 199.25,428.00 199.00,428.25 214.50,444.00 226.00,426.00 226.00,426.75 249.75,420.25 245.00,400.75 245.25,401.75 257.75,377.00 245.50,369.25 244.75,369.25 235.50,372.25 235.50,372.25 235.50,372.25 238.75,361.50 238.25,361.25 237.75,361.00 234.75,349.25 227.00,365.50 226.75,367.25 220.25,377.50 220.25,377.50 220.25,377.50 221.25,365.50 225.75,356.75 226.00,356.25 229.75,340.75 221.00,353.75 221.00,353.50 212.00,374.00 212.00,374.00 212.00,374.00 208.75,353.50 208.75,349.00 208.75,344.50 202.50,341.00 201.00,347.25 199.50,353.50 201.25,370.50 201.25,370.50 201.25,370.50 200.00,376.75 200.00,376.75 200.00,376.75 199.00,356.00 199.00,356.00 199.00,356.00 197.25,348.75 197.25,348.75 197.25,348.75 191.75,342.50 184.75,348.00 177.75,353.50 176.50,351.00 176.50,351.00 176.50,351.00 161.00,355.25 163.75,362.75 164.00,363.00 144.50,363.50 146.00,388.25 Z" />
+      </svg> </div>
+  </div>
+  <!-- orange flower -->
+  <div class="journey__layer" style="--offset:-0.7; margin-top:0px">
+    <div class="journey__image"> <svg class="flower2" xmlns="http://www.w3.org/2000/svg" viewBox="-20 50 1000 500">
+      <path id="orange"
+        fill="orange"  transform="scale(0.3)"
+        d="M 109.00,351.00
+           C 102.06,351.14 10.38,300.94 95.00,244.00 99.00,243.00 120.00,237.00 120.00,237.00 120.00,237.00 138.00,224.00 162.00,231.00 162.00,230.00 210.00,187.00 219.00,293.00 222.00,292.00 226.00,207.00 289.00,256.00 294.00,256.00 302.00,272.00 314.00,266.00 316.00,268.00 359.00,283.00 340.00,298.00 341.00,304.00 371.00,332.00 319.00,360.00 319.00,363.00 379.00,348.00 373.00,390.00 380.00,393.00 372.00,402.00 376.00,408.00 377.00,410.00 366.00,417.00 378.00,431.00 382.00,434.00 362.00,498.00 319.00,504.00 315.00,507.00 298.00,502.00 268.00,467.00 270.00,465.00 320.00,537.00 265.00,560.00 210.00,583.00 189.00,572.00 189.00,572.00 189.00,572.00 100.00,559.00 127.00,500.00 154.00,441.00 152.00,450.00 152.00,450.00 152.00,450.00 93.00,534.00 52.00,502.00 54.00,506.00 24.00,494.00 27.00,483.00 29.00,480.00 14.00,456.00 14.00,434.00 14.00,434.00 4.00,431.00 10.00,370.00 8.00,366.00 19.00,333.00 60.00,337.00 61.00,337.00 83.25,343.50 89.50,345.25" />
+      <path id="orange2"
+        fill="red" transform="scale(0.3)"
+        d="M 146.00,388.25
+           C 152.50,394.75 142.50,429.75 172.50,424.00 172.75,424.25 182.75,440.50 199.25,428.00 199.00,428.25 214.50,444.00 226.00,426.00 226.00,426.75 249.75,420.25 245.00,400.75 245.25,401.75 257.75,377.00 245.50,369.25 244.75,369.25 235.50,372.25 235.50,372.25 235.50,372.25 238.75,361.50 238.25,361.25 237.75,361.00 234.75,349.25 227.00,365.50 226.75,367.25 220.25,377.50 220.25,377.50 220.25,377.50 221.25,365.50 225.75,356.75 226.00,356.25 229.75,340.75 221.00,353.75 221.00,353.50 212.00,374.00 212.00,374.00 212.00,374.00 208.75,353.50 208.75,349.00 208.75,344.50 202.50,341.00 201.00,347.25 199.50,353.50 201.25,370.50 201.25,370.50 201.25,370.50 200.00,376.75 200.00,376.75 200.00,376.75 199.00,356.00 199.00,356.00 199.00,356.00 197.25,348.75 197.25,348.75 197.25,348.75 191.75,342.50 184.75,348.00 177.75,353.50 176.50,351.00 176.50,351.00 176.50,351.00 161.00,355.25 163.75,362.75 164.00,363.00 144.50,363.50 146.00,388.25 Z" />
+      </svg> </div>
+  </div>
+  <!-- purple flower -->
+  <div class="journey__layer" style="--offset:-1.2; margin-top:0px">
+    <div class="journey__image"> <svg class="floweranim flower2" xmlns="http://www.w3.org/2000/svg" viewBox="100 -10 1000 500">
+      <path id="flower4_1"
+        fill="#4733c5" transform="scale(0.4)"
+        d="M 385.00,618.00
+           C 385.00,618.00 364.00,600.00 367.00,537.00 369.00,538.00 367.67,520.67 348.33,521.33 329.00,522.00 337.00,507.33 343.67,505.33 350.33,503.33 345.67,515.33 348.33,487.33 351.67,487.33 361.67,468.00 379.67,486.67 383.00,488.00 399.67,486.67 397.00,494.67 394.33,502.67 391.00,476.67 403.00,466.00 415.00,455.33 405.67,448.67 405.67,448.67 405.67,448.67 421.00,450.00 431.67,458.00 442.33,466.00 449.67,468.00 449.67,468.00 449.67,468.00 451.00,452.00 489.67,450.00 528.33,448.00 500.33,436.67 547.67,432.67 595.00,428.67 591.00,462.67 599.00,479.33 603.67,479.33 589.00,474.00 616.33,521.33 619.00,524.00 641.00,600.67 570.33,607.33 569.00,608.00 519.00,594.00 505.00,624.67 507.00,626.00 502.33,632.67 502.33,632.67 502.33,632.67 517.00,645.33 536.33,644.00 537.00,644.00 597.67,606.67 641.67,692.67 643.00,692.67 659.00,711.33 663.67,735.33 665.67,730.67 659.00,745.33 670.33,765.33 672.33,768.00 679.67,789.33 648.33,786.67 643.67,786.00 608.33,818.67 569.00,808.00 529.67,797.33 519.00,802.00 517.00,801.33 515.00,800.67 432.33,770.67 434.33,738.00 438.33,740.67 429.00,737.33 436.33,727.33 443.67,717.33 465.00,720.00 459.00,666.67 457.00,666.00 447.67,663.33 447.67,663.33 447.67,663.33 420.33,658.67 408.33,712.67 396.33,766.67 390.33,744.00 373.67,755.33 357.00,766.67 310.33,770.00 306.33,758.00 302.33,746.00 305.00,770.00 245.67,748.00 249.00,747.00 212.50,723.50 212.50,724.00 212.50,724.50 199.50,702.00 205.00,681.50 204.00,681.50 198.00,670.00 198.00,670.00 198.00,670.00 206.50,654.00 209.50,639.00 209.50,639.50 223.50,621.50 223.50,621.50 223.50,621.50 250.00,607.00 250.50,600.00 249.50,602.50 247.00,597.50 268.00,593.00 268.00,592.00 298.00,570.00 328.50,605.00 330.00,606.00 333.50,620.00 381.50,619.00" />
+      <path id="flower4_2"
+        fill="#f5d709" transform="scale(0.4)"
+        d="M 517.50,509.00
+           C 517.50,509.00 562.50,476.00 562.50,476.00 562.50,476.00 558.00,524.00 558.00,524.00 558.00,524.00 537.00,572.00 537.00,572.00 537.00,572.00 513.00,599.00 513.00,599.00 513.00,599.00 513.00,521.00 513.00,521.00 513.00,521.00 519.00,512.50 519.00,512.50
+		   M 572.50,737.00
+           C 506.00,713.00 460.50,661.00 460.50,661.00 460.50,661.00 486.50,651.00 486.50,651.00 486.50,651.00 616.00,666.50 603.00,732.00 605.00,735.50 614.50,756.00 614.50,756.00 614.50,756.00 594.50,731.00 576.50,737.00
+		   M 393.50,630.50
+           C 393.50,630.50 304.00,629.00 289.00,674.50 288.00,676.00 273.50,689.50 273.50,689.50 273.50,689.50 300.50,674.00 300.50,682.00 301.00,682.50 388.00,681.50 443.00,662.50 445.00,663.00 400.50,645.00 395.50,635.00" />
+      </svg> </div>
+  </div>
+  <!-- hibiscus flower -->
+  <div class="journey__layer" style="--offset:-1.2; margin-top:0px">
+    <div class="journey__image"> <svg class="floweranim flower3" xmlns="http://www.w3.org/2000/svg" viewBox="200 -80 1000 500">
+      <path id="flower5_1"
+        fill="#c8292d" transform="scale(0.7)"
+        d="M 718.50,382.50
+           C 718.50,382.50 669.00,346.50 634.50,352.50 633.00,348.00 613.50,343.50 613.50,343.50 613.50,343.50 613.50,328.50 613.50,328.50 613.50,328.50 603.00,337.50 604.50,318.00 589.50,307.50 606.00,299.00 606.00,299.00 606.00,299.00 594.00,292.00 607.50,282.50 621.00,273.00 623.00,278.50 623.00,277.50 623.00,276.50 617.00,264.00 634.00,259.50 651.00,255.00 646.00,252.50 662.50,251.00 665.50,241.50 671.50,245.50 682.50,247.50 693.50,249.50 692.00,244.00 706.00,260.50 712.00,252.00 712.00,271.50 711.00,279.50 710.00,287.50 732.00,337.00 729.00,341.00 726.00,345.00 729.50,288.50 729.50,288.50 729.50,288.50 740.00,277.50 739.50,272.50 739.00,267.50 753.50,264.50 753.50,264.50 753.50,264.50 745.50,257.50 773.00,257.00 792.50,241.50 796.00,257.00 796.00,257.00 796.00,257.00 808.00,247.00 810.00,257.00 812.50,258.50 817.50,271.00 829.00,268.50 831.50,269.50 829.00,280.50 837.00,281.00 839.00,282.00 855.50,286.50 852.50,301.00 853.50,300.00 860.00,304.50 860.00,308.00 860.00,311.50 852.50,323.50 857.00,329.50 856.50,329.50 784.00,347.50 789.50,355.00 789.00,355.00 870.00,329.00 884.00,372.50 885.50,373.50 894.00,383.50 897.00,389.00 900.00,394.50 891.50,399.00 894.00,400.50 896.50,402.00 898.00,418.00 892.50,422.50 891.50,424.50 897.00,438.00 895.50,439.50 894.00,441.00 877.00,449.00 879.00,455.50 879.50,457.00 868.00,462.00 868.00,465.50 868.00,469.00 853.00,482.50 839.00,472.00 838.00,472.00 825.50,476.00 822.50,468.50 819.50,461.00 820.00,442.00 775.00,413.50 730.00,385.00 744.50,395.00 744.50,395.00 744.50,395.00 813.50,452.50 815.50,497.00 816.00,499.50 813.00,508.00 810.00,515.00 807.00,522.00 812.50,523.50 795.50,530.50 792.50,535.00 787.00,541.00 778.50,542.50 777.50,542.50 773.50,548.50 758.00,547.00 755.50,549.00 744.00,551.50 734.00,544.00 731.00,543.50 719.00,547.50 709.00,542.00 699.00,536.50 705.50,528.00 698.00,529.50 690.50,531.00 681.00,532.00 678.00,509.50 675.00,487.00 677.50,494.00 677.50,494.00 677.50,494.00 669.50,491.00 682.00,477.50 683.50,477.00 669.00,477.50 690.00,454.00 711.00,430.50 721.50,402.50 721.50,402.50 721.50,402.50 665.00,452.00 669.00,474.00 668.50,477.00 650.00,481.00 649.50,477.00 649.00,473.00 644.00,492.50 627.00,475.50 627.00,475.00 614.50,486.00 602.50,468.50 602.00,470.50 581.50,456.50 585.50,448.00 586.00,450.00 570.50,435.00 584.00,428.00 583.00,429.50 577.50,422.00 582.00,403.00 578.50,403.50 587.50,388.00 595.50,388.00 596.50,390.50 594.50,376.50 598.50,376.50 602.50,376.50 610.50,371.50 610.50,371.50 610.50,371.50 624.00,372.50 625.00,372.50 626.00,372.50 692.50,371.00 712.50,383.00" />
+      </svg> </div>
+  </div>
+</div>
+<div class="journey2" role="img" aria-label=" " style="filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 0.4)); z-index:50">
+  <div class="journey__layer" style="--offset:-2;filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 0.4));">
+    <div class="journey__image" style=" top:-15%;"> <img src="assets/img/flower.png" width="100%" /> </div>
+  </div>
+  <div class="journey__layer" style="--offset:-2;border-bottom:2px solid #c60645; background-color:#FFFFFF;">
+    <div class="journey__image" style="padding:2% 5%; background-color:#c60645; position:relative;">
+      <div class="box mainbox">
+        <p>I am based near Toronto, Canada. My passion for solving analytical and logic puzzles led me to pursue software development as a career. I started on this path as a .Net specialist and expanded my technology stack to include other client and server based technologies like Php, Javascript, jQuery and MySQL. Working on freelance and pet projects have helped me expand my knowledge and skills.</p>
+        <p>Certified Azure Fundamentals (AZ-900). Self-starter; ability to work in teams or independently; creative problem solver; ability to focus; honest and friendly with a passion for dogs, painting and converting cardboard boxes to side-tables.</p>
+        <p style="color:#FFC"><em>Always keen to learn new languages - to speak and to code!</em></p>
+      </div>
+    </div>
+    <div class="journey__image" style="padding:2% 5%;"> <span class="title-font">Skills</span>
+      <div class="card-group">
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">  <div class="imgbg center"><img src="assets/img/client.png" class="center"></div>  <h1>Client-side Technologies</h1>
+            </div>
+          </div>
+          <div class="general">
+            <p>HTML, CSS,</p>
+            <hr>
+            <p>JavaScript, jQuery, Angular, Node.js</p>
+            <hr>
+            <p>Bootstrap, Unsemantic</p>
+            <hr>
+            <p>WordPress, Wix</p>
+            <hr>
+            <p>XML, XSLT, JSON</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">  <div class="imgbg center"><img src="assets/img/server.png" class="center"></div>  <h1>Server-side Technologies</h1>
+            </div>
+          </div>
+          <div class="general">
+            <p>C#, PHP, ASP.Net, Python, Android app development</p>
+            <hr>
+            <p>MS SQL Server 2005/ 2008, MySQL, MS Access</p>
+            <hr>
+            <p>MS Visual Studio .NET, MS SharePoint, Eclipse, Laravel</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">  <div class="imgbg center"><img src="assets/img/devopsicon.gif" class="center"></div>  <h1>DevOps</h1>
+            </div>
+          </div>
+          <div class="general">
+            <p>MS Azure, Git, GitHub</p>
+            <p>Certified in Azure Fundamentals (AZ-900)</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">  <div class="imgbg center"><img src="assets/img/adobe.png" class="center"></div>  <h1>Creative Design</h1>
+            </div>
+          </div>
+          <div class="general">
+            <p><strong>Adobe Creative Suite</strong> - Photoshop, Illustrator, DreamWeaver, InDesign, Premiere Pro</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">  <div class="imgbg center"><img src="assets/img/onlineicon.gif" class="center"></div>  <h1>Online Marketing</h1>
+            </div>
+          </div>
+          <div class="general">
+            <p>SEO, SEM</p>
+            <hr>
+            <p>Google Analytics, Google AdWords</p>
+            <hr>
+            <p>E-mail marketing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="bgdiv" class="journey2" role="img" aria-label=" " style="position:relative;">
+  <div class="journey__layer" style="--offset:-2; margin-top:0">
+    <div class="journey__image"> <svg id="flowerspray" class="" xmlns="http://www.w3.org/2000/svg" viewBox="-950 100 1000 650">
+      <g id="papercut1" fill="white" stroke="maroon" stroke-width="1" style="border:1px solid #F96" transform="translate(-100 -50)">
+        <path d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+        <path d="M 243.00,261.00
+           C 243.00,261.00 252.36,236.91 283.50,249.00 309.00,270.00 289.26,296.81 269.64,298.36 259.81,300.63 235.45,285.27 242.73,263.45" />
+      </g>
+      <use href="#papercut1" />
+      <use href="#papercut1" />
+      <use href="#papercut1" />
+      <use href="#papercut1" />
+      </svg> </div>
+  </div>
+  <div class="journey__layer" style="--offset:-1.3; margin-top:-180px;">
+    <div class="journey__image">
+      <div style="width:92%">
+        <div class="title-font left">Education</div>
+        <div class="title-font right">Certifications</div>
+      </div>
+      <div class="box">
+        <div class="left"> <span class="subheading-font">Master of Business Administration</span><br>
+          <p>Loyola College</p>
+          <p>Pondicherry University – Loyola College Twinning Program, India</p>
+          <br>
+          <span class="subheading-font">Bachelor of Engineering in Electrical and Electronics</span><br>
+          <p>Misrimal Navajee Munoth Jain Engineering College</p>
+          <p>Anna University, India</span> 
+        </div>
+        <div class="right neg-break">
+          <ul class="green-font">
+            <li>Microsoft Azure Fundamentals (AZ-900)</li>
+            <li>PRINCE2</li>
+            <li>Management Essentials, <em>Harvard Business School (Virtual)</em></li>
+            <li>Zertifikat Deutsche, <em>International Goethe Institute, Germany</em></li>
+            <li>B2 level German language, <em>Max Mueller Bhavan, India</em></li>
+            <li>Fundamentals of Banking BN101, <em>Dun and Bradstreet -D&amp;B</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="journey2" role="img" aria-label=" " style="position:relative;">
+  <div class="journey__layer" style="--offset:-2; margin-top:0">
+    <div class="journey__image" style="padding:2% 5%;height:100vh; background-color:#eeeeed">
+      <div class="title-font">Projects</div>
+      <div style="margin:2% 0">
+      <p>A selection of projects that I worked on</p>
+      </div>
+      <div class="projectbox">
+        <div class="border">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 100 200 650" class="graphics">		  
+        	<path fill="#89b41e" transform="translate(10 50) scale(0.4)"
+        d="M 784.50,244.00
+           C 784.50,244.00 769.00,240.00 762.00,222.50 760.00,219.00 765.00,219.50 765.00,219.50 765.00,219.50 755.50,211.50 760.50,196.00 758.00,194.50 765.00,198.50 765.00,198.50 765.00,198.50 763.00,175.50 770.75,172.00 771.25,172.50 773.75,173.00 773.75,173.00 773.75,173.00 780.00,153.00 790.00,149.75 791.00,150.25 792.25,153.25 792.25,153.25 792.25,153.25 798.00,139.00 810.50,129.75 811.25,129.50 812.50,131.25 812.50,131.25 812.50,131.25 824.50,117.00 829.00,115.75 829.50,116.00 830.75,120.25 830.75,120.25 830.75,120.25 842.75,104.25 842.75,103.50 842.75,102.75 851.25,111.50 853.50,133.00 853.50,133.50 856.50,127.75 856.50,127.75 856.50,127.75 862.25,140.50 863.00,148.00 863.75,148.00 865.75,144.25 865.75,143.25 865.75,142.25 871.25,150.75 869.00,166.50 870.25,167.25 874.00,164.50 874.00,163.25 874.00,162.00 875.75,191.00 870.50,203.25 870.00,204.50 873.75,201.75 873.75,201.75 873.75,201.75 868.25,222.00 865.25,226.50 866.25,226.50 870.75,223.50 870.75,223.50 870.75,223.50 859.00,243.75 855.00,249.00 854.25,250.75 860.75,250.25 860.75,250.25 860.75,250.25 842.50,268.75 814.50,263.75 814.75,263.75 779.25,250.50 783.25,247.25 783.50,247.00 787.25,246.75 787.00,246.50" />
+      		<g fill="#c63462" stroke="yellow" stroke-width="1">
+        	  <path d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+		    </g>
+		  </svg>
+          <div class="tools"><span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span></div>
+          <div class="content"><span class="subheading-font" style="color:#c63462">Work Management Web Application</span>
+            <p>Performed full stack development of end-to-end web applications using PHP, C# .Net, Node.js, jQuery, and offline solutions using VBA. Designed front-end using HTML, CSS, Bootstrap and jQueryui; and Angular for SPA</p>
+          </div>
+        </div>
+      </div>
+      <div class="projectbox">
+        <div class="border"> 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 100 200 650" class="graphics">
+      		<g fill="#c63462" stroke="white" stroke-width="1">
+        	  <path d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+		    </g>
+		  </svg>
+          <div class="tools"><span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span></div>
+          <div class="content"><span class="subheading-font">SaaS product for writing research articles</span>
+          <p>Performed full stack development of end-to-end web applications using PHP, C# .Net, Node.js, jQuery, and offline solutions using VBA. Designed front-end using HTML, CSS, Bootstrap and jQueryui; and Angular for SPA</p>
+          <span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span> </div>
+          </div>
+      </div>
+      <div class="projectbox">
+        <div class="border">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 100 200 650" class="graphics">
+      		<g fill="#c63462" stroke="yellow" stroke-width="1">
+        	  <path d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+		    </g>
+		  </svg>
+          <div class="tools"><span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span></div>
+          <div class="content"><span class="subheading-font">Work Management Web Application</span>
+            <p>Performed full stack development of end-to-end web applications using PHP, C# .Net, Node.js, jQuery, and offline solutions using VBA. Designed front-end using HTML, CSS, Bootstrap and jQueryui; and Angular for SPA</p>
+          </div>
+        </div>
+      </div>
+      <div class="projectbox">
+        <div class="border">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 100 200 650" class="graphics">
+      		<g fill="#c63462" stroke="yellow" stroke-width="1">
+        	  <path d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+		    </g>
+		  </svg>
+          <div class="tools"><span class="tag">Php</span><span class="tag">C# .Net</span><span class="tag">SQL</span><span class="tag">Azure</span><span class="tag">GitHub</span></div>
+          <div class="content"><span class="subheading-font">Work Management Web Application</span>
+            <p>Performed full stack development of end-to-end web applications using PHP, C# .Net, Node.js, jQuery, and offline solutions using VBA. Designed front-end using HTML, CSS, Bootstrap and jQueryui; and Angular for SPA</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="journey2" role="img" aria-label=" " style="position:relative;">
+  <div class="journey__layer" style="--offset:-2; margin-top:0">
+    <div class="journey__image" style="padding:2% 5%;height:100vh">
+      <div class="title-font">Contact Me</div>
+      <div style="width:50%;border:1px solid #F39; margin:auto auto">
+      
+      <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" style="border:1px solid #F96">
+      <g fill="white" stroke="maroon" stroke-width="1">
+        <path transform="scale(0.3) translate(0 0)" d="M 105.67,193.67
+           C 105.67,193.67 129.00,156.33 143.67,157.67 144.33,159.00 185.00,132.33 226.33,205.67 228.33,205.67 239.00,209.00 230.33,184.33 231.67,183.00 192.33,142.33 211.67,107.00 215.67,107.67 248.33,83.67 259.67,79.67 262.33,81.00 265.00,72.33 287.00,81.00 289.00,83.00 335.00,95.67 334.33,105.00 335.67,107.67 358.33,142.33 333.67,177.00 331.67,180.33 310.33,198.33 314.33,205.00 313.67,203.67 320.33,227.00 332.33,206.33 344.33,185.67 374.33,164.33 405.67,177.67 409.00,179.67 432.33,217.67 443.00,217.67 442.33,219.67 449.67,225.67 443.67,243.00 437.67,260.33 430.33,293.67 415.67,308.33 420.33,305.67 396.33,326.33 327.67,296.33 327.00,299.00 305.67,295.67 329.67,315.00 331.00,319.00 366.33,321.67 393.67,347.67 395.00,351.67 413.00,350.33 387.67,404.33 387.67,405.00 385.67,417.00 369.00,436.33 371.00,437.67 333.00,435.00 315.00,443.00 315.00,444.33 273.00,437.00 269.00,392.33 266.33,396.33 266.33,349.67 266.33,349.67 266.33,349.67 265.00,327.00 250.33,347.67 251.00,350.33 263.00,404.33 233.00,432.33 231.67,436.33 195.00,429.00 189.00,433.67 189.00,433.67 163.67,442.33 161.00,429.00 158.33,415.67 150.33,404.33 148.33,405.00 146.33,405.67 115.67,364.33 135.00,333.67 138.33,338.33 151.67,313.00 197.00,296.33 194.33,297.67 203.67,280.33 186.33,285.67 169.00,291.00 137.67,305.00 124.33,288.33 111.00,271.67 98.33,241.67 101.67,235.67 101.64,234.91 99.82,227.82 95.82,221.09 95.45,221.45 86.55,213.82 98.55,204.73 100.55,204.18 104.73,195.27 104.73,195.27" />
+      </g>
+      </svg>   
+        <div style="width:25%; position:relative; display:inline">   
+        <div class="contacticon" style="margin:50px; padding:50px; border:3px solid #C63; border-radius:110px"><img src="assets/img/email.gif"></div>
+        </div>
+        <div style="width:25%; position:relative; display:inline">
+        <img src="assets/img/instagram.gif">
+        </div>
+        <img src="assets/img/linkedin.gif">
+
   <a id="jr"></a>
   <div class="titlebar">My Journey</div>
   <div class="journey2" role="img" aria-label=" ">
@@ -594,11 +1398,44 @@ Infosys Technologies Ltd, India 			 			   Jul 2006 – Jul 2008
         <div><span class="subheading-font" style="font-size:1.4em">Bachelor of Engineering in Electrical and Electronics</span><br>
           <span class="grey-font">Misrimal Navajee Munoth Jain Engineering College<br>
           Anna University, Chennai, India</span> </div>
+
       </div>
+    
     </div>
   </div>
+</div>-->
+<div class="journey2" role="img" aria-label=" " style="position:relative;">
+  <div class="journey__layer" style="--offset:-2; margin-top:0">
+    <div class="journey__image" style="padding:2% 5%;height:100vh">
+      <div class="title-font">Contact Me</div>
+      <div style="width:60%;margin:auto auto">
+      	<div style="width:25%; position:relative; display:inline; margin:50px;"> 
+      		<a href="mailto:sushmitakolhapurkar@gmail.com"><img src="assets/img/email.gif"></a>
+        </div>
+        <div style="width:25%; position:relative; display:inline; margin:50px;">
+        	<a href="https://github.com/sushmita-kolhapurkar"><img src="assets/img/github.gif"></a>
+        </div>
+        <div style="width:25%; position:relative; display:inline; margin:50px;">
+        	<a href="http://www.instagram.com/sushmitakolhapurkar" target="_blank"><img src="assets/img/instagram.gif"></a>
+        </div>
+      	<div style="width:25%; position:relative; display:inline; margin:50px;"> 
+        	<a href="http://www.linkedin.com/sushmita-kolhapurkar" target="_blank"><img src="assets/img/linkedin.gif"></a>
+        </div>
+      </div>
+     </div>
+     
+    <svg id="flowerrose" xmlns="http://www.w3.org/2000/svg" viewBox="-780 0 1000 800" style="border:1px solid #F96">
+      <path id="rose"
+        fill="none" stroke="black" stroke-width="1"
+       	d="M 98.50,368.50 C 98.50,368.50 99.50,244.00 112.50,249.50 113.00,250.00 138.50,229.50 170.50,261.50 171.00,263.00 108.00,284.00 112.50,234.00 113.00,234.50 118.50,219.50 139.50,222.50 140.00,222.50 129.50,232.00 125.50,238.50 126.00,240.50 118.50,245.50 102.00,247.50 102.50,247.00 96.38,251.75 100.12,256.88 100.50,256.38 105.50,259.25 100.50,238.75 101.38,239.00 96.00,224.38 86.12,226.12 86.38,226.75 70.50,226.38 65.50,244.25 65.25,244.50 96.38,241.75 95.38,226.62 95.88,226.75 96.88,220.12 89.88,216.12 90.12,217.00 73.75,211.25 59.88,222.12 60.62,223.12 66.50,222.25 76.88,219.62 77.50,219.38 90.25,214.75 96.88,229.50 96.00,227.38 99.25,237.00 101.88,237.50 104.50,238.00 106.75,230.38 107.62,212.75 108.12,212.50 109.12,188.12 102.12,196.88 102.00,197.75 87.38,205.62 80.12,200.00 80.00,199.50 71.62,189.00 65.62,190.88 65.50,191.75 61.62,193.75 57.75,175.12 58.12,175.12 49.75,164.12 56.25,154.50 57.38,153.75 69.25,142.62 69.50,134.50 69.62,135.00 71.38,129.38 79.50,130.38 86.00,130.50 115.62,133.25 117.50,132.75 119.38,132.25 131.25,141.50 122.38,155.88 122.00,156.88 117.00,160.12 123.12,167.62 123.75,167.25 134.00,186.62 116.62,191.38 99.25,196.12 88.38,188.88 102.38,179.12 102.75,179.25 116.38,170.50 111.75,146.25 111.62,145.38 103.75,127.75 90.88,141.62 87.38,146.62 77.88,144.38 71.12,147.12 64.38,149.88 63.38,165.75 70.88,174.00 78.38,182.25 87.62,181.75 94.12,178.25 100.62,174.75 107.88,167.50 104.75,158.12 101.62,148.75 88.12,149.62 83.75,151.38 79.38,153.12 75.38,159.88 77.25,168.00 77.38,168.88 83.38,178.75 92.75,169.75 93.25,169.88 93.38,165.50 99.12,164.12 99.75,164.12 92.12,153.12 83.88,159.25 82.88,159.88 81.25,166.62 88.50,166.38 88.88,166.25 88.62,160.88 88.62,160.88" />
+		</svg>
+   </div>   
+
 </div>
+      
 </body>
+<script type="text/javascript" src="assets/parallax.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 <script type="text/javascript" src="assets/main.js"></script>
+
 </html>
