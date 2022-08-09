@@ -8,6 +8,8 @@ html,body {
   padding: 0;
   margin: 0;
   position: relative;
+  max-height:1000px;
+  overflow: none;
   background-color:#fcfcfb;
   color:#5a5a5a;
   scroll-behavior: smooth;
