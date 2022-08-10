@@ -3,7 +3,7 @@ const scrollEl = document.documentElement
 const root = document.documentElement
 const rollflower = document.querySelector('.rollflower');
 
-var scrollPos, rollPos;
+var scrollPos;
 
 // update css property on scroll
 function animation() {
@@ -16,8 +16,6 @@ function animation() {
 	if (scrollPos <=500) {
     // update css property --scrollPos with scroll position in pixels
     root.style.setProperty('--scrollPos', scrollPos + 'px')
-    root.style.setProperty('--rollPos', rollPos + 'deg')
-    root.style.setProperty('--radPos', scrollPos/100 + 'rad')
 	}
 	
   }
