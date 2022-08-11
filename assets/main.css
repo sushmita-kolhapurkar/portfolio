@@ -241,7 +241,6 @@ section {
   height: 100vh;
   overflow: visible;
   position: relative;
-  scroll-snap-align: start;
   z-index:50;
 }
 .sectionbox {
