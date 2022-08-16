@@ -696,4 +696,86 @@ g[id^=papercut]>path{
 @keyframes visible {
   100% { stroke-dashoffset: 0; }
 }
-  
+ 
+ @media screen and (min-width:768px) and (max-width:1023px) {
+html, body {
+	font-size: 0.95em;
+}
+}
+
+ @media screen and (max-width:768px) {
+html, body {
+	font-size: 0.9em;
+}
+#logo-title {
+	font-size: 2.2em;
+	margin-top:0.6em;
+}
+.subtitle-font {
+	margin-left: -20px;
+	font-size: 3.6em;
+	margin-top:1em;
+}
+.rollingdiv svg{
+	max-width:50%;
+}
+.homebox {	
+	height: 70vh;
+}
+.homebox .right {
+	width: 90%;
+	right: 0;
+	left: 0;
+	top: 45%;
+	bottom: 0;
+	position: relative;
+	display: block;
+	margin:0 15px;
+}
+#flowers .sectionbox{
+	top:5%;
+}
+/* First section box height */
+section:first-child {
+	height:95vh;
+}
+section {flex-direction: column-reverse;   }
+#second>.sectionbox:nth-child(2)>.layerbox {
+	top:-12%;
+}
+.card-group {
+	flex-direction:column;
+}
+.card {
+	width:90%;
+}
+.left{
+	width:100%;
+}
+.right{
+	width:100%; 
+}
+
+.navMenu {
+	position: absolute;
+}
+.navMenu {
+	position: absolute;
+	display:block;
+	width:30%;
+	top: 8%;
+	right:2%;
+}
+.navMenu a {
+	color: #c4697c;
+	font-size: 0.9em;
+	width: 100px;
+	padding-bottom: 0.8em;
+}
+.navMenu a:selected {
+	text-decoration:underline;
+}
+.overlay, .neg-break {
+	margin-top: 0px;
+}
+ } 
