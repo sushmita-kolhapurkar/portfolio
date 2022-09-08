@@ -1,10 +1,10 @@
 <?php
 // Sets general environment properties
 
-define("MYSQL_SERVER", "localhost");
-define("MYSQL_USER", "root");
-define("MYSQL_PASSWORD", "");
-define("MYSQL_DATABASE", "dbQuiz");
+define("MYSQL_SERVER", "remotemysql.com");
+define("MYSQL_USER", "xio9BahYAI");
+define("MYSQL_PASSWORD", "Q1xrkGjR7b");
+define("MYSQL_DATABASE", "xio9BahYAI");
 
 ini_set('display_errors',1);
 ini_set('error_reporting',E_ALL);
